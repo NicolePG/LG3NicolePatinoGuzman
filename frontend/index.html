@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda Cloud de Contactos</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="badge">LG3 · Frontend / Backend · PostgreSQL · UUID</p>
+      <h1>Agenda Cloud de Contactos</h1>
+      <p class="subtitle">Registro, edición y visualización de personas y grupos con fotografía.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel">
+      <div class="section-title">
+        <h2>Registrar / editar grupo</h2>
+        <button id="resetGroupBtn" class="ghost-btn" type="button">Nuevo grupo</button>
+      </div>
+
+      <form id="groupForm" class="form-grid">
+        <input type="hidden" id="groupCode" />
+
+        <label>
+          Nombre del grupo
+          <input id="groupName" type="text" placeholder="Ej. Compañeros de clase" required />
+        </label>
+
+        <label class="switch-row">
+          <span>Activo</span>
+          <input id="groupActive" type="checkbox" checked />
+        </label>
+
+        <button class="primary-btn" type="submit">Guardar grupo</button>
+      </form>
+    </section>
+
+    <section class="panel form-panel">
+      <div class="section-title">
+        <h2>Registrar / editar persona</h2>
+        <button id="resetPersonBtn" class="ghost-btn" type="button">Nueva persona</button>
+      </div>
+
+      <form id="personForm" class="form-grid two-columns">
+        <input type="hidden" id="personCode" />
+
+        <label>
+          Nombres
+          <input id="names" type="text" required />
+        </label>
+
+        <label>
+          Apellidos
+          <input id="lastNames" type="text" required />
+        </label>
+
+        <label>
+          Correo
+          <input id="email" type="email" required />
+        </label>
+
+        <label>
+          Celular
+          <input id="cellNumber" type="text" required />
+        </label>
+
+        <label>
+          Dirección
+          <input id="address" type="text" required />
+        </label>
+
+        <label>
+          Grupo
+          <select id="groupSelect" required></select>
+        </label>
+
+        <label class="full-width">
+          Observaciones
+          <textarea id="observations" rows="3" placeholder="Notas adicionales..."></textarea>
+        </label>
+
+        <label>
+          Fotografía
+          <input id="photo" type="file" accept="image/*" />
+        </label>
+
+        <div class="photo-preview-box">
+          <span>Vista previa</span>
+          <img id="photoPreview" alt="Vista previa" src="" />
+        </div>
+
+        <label class="switch-row full-width">
+          <span>Activo</span>
+          <input id="personActive" type="checkbox" checked />
+        </label>
+
+        <button class="primary-btn full-width" type="submit">Guardar persona</button>
+      </form>
+    </section>
+
+    <section class="panel wide-panel">
+      <div class="section-title">
+        <h2>Lista de grupos</h2>
+        <span id="groupCounter" class="counter"></span>
+      </div>
+      <div id="groupList" class="group-list"></div>
+    </section>
+
+    <section class="panel wide-panel">
+      <div class="section-title">
+        <h2>Lista de personas</h2>
+        <span id="personCounter" class="counter"></span>
+      </div>
+      <div id="personList" class="card-grid"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
