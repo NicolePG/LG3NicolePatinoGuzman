@@ -87,13 +87,7 @@ http://127.0.0.1:8000
 7. Al terminar, abrir la URL pública del servicio.
 
 ## Diagrama de red
-```mermaid
-flowchart LR
-    A[Usuario / Navegador]\nHTTPS --> B[Frontend HTML CSS JS\nRender Web Service]
-    B --> C[Backend FastAPI\nRender Web Service]
-    C --> D[(PostgreSQL\nRender Database)]
-    E[GitHub] --> B
-```
 
+![alt text](image.png)
 ## Nota importante
 Si usas el plan gratuito de Render, la documentación oficial indica que las bases de datos PostgreSQL gratuitas expiran 30 días después de su creación. Para una entrega más estable, conviene revisar eso o usar un plan pagado. 
